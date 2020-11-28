@@ -1,0 +1,79 @@
+###############################
+## Rangsiman Ketkaew 2017,,, ##
+###############################
+echo
+title "%%%%%%%%%%%%%%%%%%%%%%%% Input Settup %%%%%%%%%%%%%%%%%%%%%%%%"
+start Dump-Ru-BL2-Re-CDFT-Energy-12cores-nodisk-memsize
+memory total 2000 stack 500 heap 500 global 1000 mb
+#memory total 2000 stack 1000 heap 100 global 900 mb
+#memory total 1000 mb
+# Mem for NWchem = (Memory/node)/(Process/node),, <= 80%
+# 2 GB * nprocs
+scratch_dir /lustre/rangsiman/scratch/nwchem
+permanent_dir .
+geometry hybrid units angstroms print xyz noautoz noautosym; load ../hybrid-opt-water-xyz.txt format xyz; end
+geometry strc1 units angstroms print xyz noautoz noautosym; load ../strc1-opt-water-xyz.txt format xyz; end
+geometry strc2 units angstroms print xyz noautoz noautosym; load ../strc2-opt-water-xyz.txt format xyz; end
+geometry strc3 units angstroms print xyz noautoz noautosym; load ../strc3-opt-water-xyz.txt format xyz; end
+
+title "%%%%%%%%%%%%%%%%%%%%%%%% Basis-set Setting %%%%%%%%%%%%%%%%%%%%%%%%"
+basis
+   H library 6-31g*
+   O library 6-31g*
+   C library 6-31g*
+   N library 6-31g*
+   Cl library 6-31g*
+   Ru library stuttgart_rsc_1997_ecp
+   Re library stuttgart_rsc_1997_ecp
+end
+ecp
+   Ru library stuttgart_rsc_1997_ecp
+   Re library stuttgart_rsc_1997_ecp
+end
+
+cosmo
+ dielec 78
+ lineq 0
+end
+
+freq
+ temp 1 298.15
+end
+
+title "%%%%%%%%%%%%%%%%%%%%%%%% Optimization using CDFT for Before ET %%%%%%%%%%%%%%%%%%%%%%%%"
+##### E0E0(S0S0)
+driver; xyz hybrid-cdft-before-et; maxiter 200; 
+GMAX 0.00450
+GRMS 0.00300
+XMAX 0.01800
+XRMS 0.01200
+end
+
+set driver:linopt 0
+set geometry hybrid
+charge +1 ### doped electron complex
+dft
+ xc b3lyp
+ semidirect filesize 0 memsize 100000000
+ grid nodisk fine
+ maxiter 500
+ vectors fragment ../strc1-before-et-neutral.mos ../strc2-before-et-neutral.mos ../strc3-before-et-neutral.mos output hybrid-cdft-before-et-neutral.mos
+ mult 2
+ odft
+ convergence energy 1e-5
+ mulliken
+ print "mulliken ao"
+ print "final vectors analysis"
+ cdft 1 72 charge 1 # before electron transfer
+ cdft 73 99 charge 0
+ cdft 100 103 charge 0
+ convergence nolevelshifting
+end
+set dft:cdft_maxiter 500
+task dft energy
+
+
+
+
+
+

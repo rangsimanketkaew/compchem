@@ -1,0 +1,13 @@
+%nprocshared=4
+# b3lyp/6-31+g(d) geom=connectivity pop=nboread
+
+Title Card Required
+
+x
+x
+x
+x
+x
+x
+
+$nbo nbo $end

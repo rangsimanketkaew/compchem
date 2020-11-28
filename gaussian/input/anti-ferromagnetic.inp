@@ -1,0 +1,48 @@
+%chk=antiferro-1
+#p opt freq b3lyp/3-21g geom=connect
+ 
+Mn2O2(NH3)8 High Spin (antiferromagnetic coupling)
+ 
+0,11
+
+--link1--
+%chk=antiferro-2
+#p b3lyp/3-21g guess=read geom=check stable=opt             
+ 
+Mn2O2(NH3)8 High Spin (antiferromagnetic coupling)
+ 
+0,11
+
+--link1--
+%chk=antiferro-3
+#p b3lyp/3-21g opt geom=allcheck guess=read
+
+Mn2O2(NH3)8 High Spin (antiferromagnetic coupling)
+ 
+0,11
+
+--link1--
+%chk=antiferro-4
+# b3lyp/3-21g guess=read geom=allcheck stable=opt 
+
+Mn2O2(NH3)8 High Spin (antiferromagnetic coupling)
+ 
+0,11
+
+--link1--
+%chk=antiferro-5
+# ub3lyp/3-21g guess=(fragment=4,only) 
+
+Mn2O2(NH3)8 High Spin (antiferromagnetic coupling)
+## This step is very important, you have to define the fragment and specify them both charge&spin multiplicity.
+
+0,11
+
+--link1--
+%chk=antiferro-6
+# ub3lyp/3-21g scf=nosymm guess=read geom=allcheck stable=opt
+
+Mn2O2(NH3)8 High Spin (antiferromagnetic coupling)
+ 
+0,11
+

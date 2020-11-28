@@ -1,0 +1,22 @@
+%chk=/home/gegroenh/im_CI.chk
+#p 6-31g geom=connectivity casscf(2,2,nroot=2) opt=conical
+
+Conical intersection between excited and ground state potential energy surfaces%chk=/home/gegroenh/im_CI.chk
+
+1 1
+ C                 -0.67850745    0.00000000    0.00000214
+ H                 -1.21382862   -0.91434259    0.15677690
+ H                 -1.21382987    0.91434372   -0.15676205
+ H                  1.13693348    0.83919195    0.14391019
+ H                  1.13693235   -0.83919183   -0.14391993
+ N                  0.60354820    0.00000000   -0.00000258
+
+ 1 2 1.0 3 1.0 6 2.0
+ 2
+ 3
+ 4 6 1.0
+ 5 6 1.0
+ 6
+ 
+ 
+ 

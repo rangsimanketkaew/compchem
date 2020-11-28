@@ -1,0 +1,27 @@
+%NProc=1
+%Mem=1GB
+%Chk=hcn_hnc_ts.chk
+#p MP2/aug-cc-pVTZ Opt=(TS,CalcFC) MaxDisk=1GW
+ 
+Hydrogen isocyanide: geometry optimization
+
+0 1
+ n
+ c   1 cn2     
+ h   1 hn3        2 hnc3      
+ 
+cn2         1.200000
+hn3         1.300000
+hnc3         68.000
+ 
+--Link1--
+%NProc=1
+%Mem=1GB
+%Chk=hcn_hnc_ts.chk
+#p MP2/aug-cc-pVTZ IRC=(RCFC,MaxPoints=18,StepSize=5)
+#p Geom=Check Guess=Check MaxDisk=1GW
+ 
+HCN <-> HNC isomerization: intrinsic reaction path
+
+0 1
+

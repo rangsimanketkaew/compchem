@@ -1,0 +1,25 @@
+%chk=Formamide_rot_recoor.chk
+%mem=2000mb
+%nprocs=2
+#p rhf/6-311++G(d,p) opt=modredundant nosymm
+
+RHF/6-311++G(d,p) (MeHNCHO) Me rot 2-1-6-7= 0 to 60
+
+0 1
+N    0.00000000    0.00000000    -1.36100000
+C    0.00000000    0.00000000     0.00000000
+O    0.99400000    0.00000000     0.69340000
+H   -0.85910000    0.00000000    -1.88640000
+H   -1.02320000    0.00000000     0.42260000
+C    1.28045663    0.00000000    -2.08303243
+H    2.08663777    0.00000000    -1.37948999
+H    1.34338205   -0.87365131   -2.69758412
+H    1.34338270    0.87365135    -2.69758400
+
+6 * F      !Freeze bond lengths around the atom 6
+1 * F      !Freeze bond lengths around the atom 1
+* 1 * F      !Freeze bond angles around the atom 1
+* 2 * F        !Freeze bond angles around the atom 2
+* 1 6 * R      !Relax coordinates passing through atoms 1-6 (dihedral)
+D 2 1 6 7 S 12 5.0      !Scan dihedral 2-1-6-7 in 12 steps of 5 deg
+

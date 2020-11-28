@@ -1,0 +1,15 @@
+#p ROHF/STO-3G scf=(symm,tight) guess=alter
+
+rohf/STO-3G opt amide radical NH2, 2A1 state
+orbital 5 & 6 will be swapped
+
+0 2
+N1
+H2  1  r2
+H3  1  r2  2  a3
+
+r2=1.05726795
+a3=100.0637224
+
+5 6
+           	

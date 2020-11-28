@@ -1,2 +1,1 @@
-# compchem
-Computational Chemistry stuff
+# Computational Chemistry stuff
