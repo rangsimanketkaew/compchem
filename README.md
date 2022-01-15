@@ -17,6 +17,7 @@
 - [Essential skills for HPC](#essential-skills-for-hpc)
 - [Essential skills for coding GPU](#essential-skills-for-coding-gpu)
 - [Essential skills for machine learning (bonus)](#essential-skills-for-machine-learning-bonus)
+- [Essential skills for machine learning chemistry (bonus)](#essential-skills-for-machine-learning-chemistry-bonus)
 
 ## General skills
 
@@ -28,7 +29,7 @@
 - For Linux and macOS:
   - Basic/intermediate commands: `ls`, `cd`, `cp`, `rm`, `ssh`, `scp`, and many more
   - Know some important files/folders: `.bashrc`, `.ssh`
-  - Understand some env var: `$PATH`, `$LD_LIBRARY_PATH`
+  - Understand some environmen variables: `$PATH`, `$LD_LIBRARY_PATH`
 - Coding
   - Bash
   - Python, Jupyter notebook
@@ -37,13 +38,13 @@
   - SLURM, PBS, SGE, module
 - Software
   - Commercial: Gaussian, Q-Chem, ADF, MOLPRO, MOLCAS, TURBOMOLE and many more
-  - Non-commercial: PySCF, Psi4, OpenMOLCAS, ORCA, NWChem, DIRAC, DALTON, CP2K, CPMD, LAMMPS, VASP, QE and many more
+  - Non-commercial: PySCF, Psi4, OpenMOLCAS, GAMESS, ORCA, NWChem, DIRAC, DALTON, CP2K, LAMMPS, VASP, QE and many more
   - Full list is [here](https://en.wikipedia.org/wiki/List_of_quantum_chemistry_and_solid-state_physics_software)
 - Graphic visualization
-  - VMD, Gaussview, Ovito
+  - JMol, Molden, Gaussview, Avogadro, UCSF Chimera, VMD, Ovito, PyMol
   - 2D and 3D plots
 - Other useful tools
-  - ase
+  - ASE, MDTraj, Pymatgen, RDKit, OpenBabel
 - Writing
   - Microsoft Word
   - LaTeX
@@ -60,7 +61,7 @@
 - Photochemistry
 - Catalyst design
 - Potential energy surface
-- Vibrational and eletronic spectroscopy
+- Vibrational and electronic spectroscopy
 - Drug discovery, biomolecular docking
 - Cheminformatics
 - Machine learning
@@ -87,7 +88,7 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
 - Data fitting
   - Taylor expansion
   - Polynomial interpolation
-  - Least squeare approx.
+  - Least squeare approximation
 - Finding roots
   - Bilinear interpolation
   - Newton-Raphson method
@@ -95,7 +96,7 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
 - Quantum chemistry
   - Electronic structure, excited state, transition state, atomic/molecular bond
   - Bra-ket notation (quantum state)
-  - *ab initio* (wavefunction-based) method 
+  - *Ab initio* (wavefunction-based) method
     - HF, MPn, CI, CC, MRCI, MSSCF, CASSCF, CASPT2
     - DMRG (matrix product states), FCIQMC
   - Density functional theory method
@@ -108,7 +109,6 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
     - Adiabatic and non-adiabatic
   - Other methods
     - QM/MM
-
 - Molecular dynamics
   - Classical mechanics
   - Force field
@@ -158,15 +158,15 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
   - C++
     - C++ 11 or newer
     - Type of variable: signed, unsigned, long, double, etc.
-    - Loops, conditional statement, 
+    - Loops, conditional statement
     - Standard libraries: vector, rand
-    - Understanding header (.hpp) and source file (.cpp or .cc)
-    - Preprocessor (#if, #ifdef, #ifndef, #define, etc.)
+    - Understanding header (`.hpp`) and source file (`.cpp` or `.cc`)
+    - Preprocessor (`#if`, `#ifdef`, `#ifndef`, `#define`, etc.)
     - Function, class, struct, template
     - Declaration
       - namespace, const, attribute, pointer, pass by reference, static_assert
     - Initialization
-    - Misc: Casiting, lambda expression, encapsulation, file handling, exception handling
+    - Misc: casting, lambda expression, encapsulation, file handling, exception handling
   - Fortran
     - Learn either F77 or F90 or modern fortran (2003, 2008, 2018)
     - Module, subroutine, function
@@ -189,6 +189,10 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
   - FFTW: for computing the discrete Fourier transform in one or more dimensions, real and complex data
   - Eigen: linear algebra library
   - Boost: a collection of C++ functions e.g. `regex`, `serialization`
+- QM libraries
+  - libxc: XC function library
+  - libint: For computing Gaussian integral
+  - libcint: general GTO integrals
 - Code optimization
   - Benchaming/scaling
   - Complexity (Big O)
@@ -208,11 +212,11 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
   - Basic/intermediate commands
   - GitHub & GitLab
 - Documentation
-  - Sphinx (for markdown and .rst)
+  - Sphinx (for markdown and reStructuredText)
   - Doxygen (for C++ or Fortran)
 - Soft skills
   - Problem solving, critical thinking
-  - Googling and Stack Overflow
+  - Googling and stackoverflowing :upside_down_face:
 
 ## Essential skills for HPC
 
@@ -234,7 +238,7 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
 ## Essential skills for coding GPU
 
 - Intermediate/advanced C or C++ skills
-- Programming model: Kernels, thread hierarchy, memory hierarchy, heterogenous hierarchy, asynchronous SIMT
+- Programming model: Kernels, thread hierarchy, memory hierarchy, heterogeneous hierarchy, asynchronous SIMT
 - CUDA
   - Understand CUDA operation:
     1. Declare and allocate host and device memory.
@@ -265,11 +269,30 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
   - Principal component analysis
   - Kernel-ridge method
   - Neural network
+    - Feedforward NN
+      - Autoencoder
     - CNN
+    - RNN (LSTM)
     - GNN
-    - Autoencoder
-    - Generative adversarial model
+    - Adversarial NN
+      - GAN
 - Model training and optimization
-  - Hyperparameter opt
-  - Techniques: early stopping, dropout, batch normalization
+  - Hyperparameter optimization
+- Techniques to prevent overfittingTechniques
+  - Data augmentation, early stopping, regularization, dropout, batch normalization
 - Deploying model
+
+## Essential skills for machine learning chemistry (bonus)
+
+- Atomic and molecular representation
+  - Structral-based: one-hot, fingerprint
+  - Electronic-based: Coulomb matrix, BoB, Symmetry and Gaussian functions, Gaussian function and many more
+- Configurational and chemical space
+- Target prediction
+  - Energy and force
+  - Molecular properties: dipole moment, polarizability
+- Database
+  - PubChem
+  - GDB
+  - DrugBank
+  - QM: QM7, QM8, QM9
