@@ -76,10 +76,22 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
     - Geenral properties: Complex conjugate, transpose and conjugate transpose
     - Diagonalization
     - Matrix multiplication (Dense and sparse)
-  - Solving equations
-  - Eigenvalue & eigenvector
+  - Eigen-problem
+    - Jacobi iteration
+    - Eigenvalue & eigenvector
+    - Singular value decomposition
 - Calculus
   - Numerical method
+  - Differential equation & ODE
+  - Vector calculus
+- Data fitting
+  - Taylor expansion
+  - Polynomial interpolation
+  - Least squeare approx.
+- Finding roots
+  - Bilinear interpolation
+  - Newton-Raphson method
+  - PDE
 - Quantum chemistry
   - Electronic structure, excited state, transition state, atomic/molecular bond
   - Bra-ket notation (quantum state)
