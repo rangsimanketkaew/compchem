@@ -125,10 +125,17 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
   - Input/output
 - High-level programming
   - Python
+    - Pip and conda: Python helper
     - NumPy: Array (vector, matrix) computation
+    - Numba: JIT compiler for NumPy
+    - Jax: autograd of NumPy array
     - SciPy: a collection of math functions/routines
     - Scikit-learn: statistics routines, optimization, curve fitting
+      - Intel Scikit-learn is 10x faster than the standard one
     - Matplotlib / Plotly for plotting graph
+    - Theano: numerical computation
+    - SCOOP: distributed modules for parallel programming
+    - NetworkX: Graph library
 - Low-level programming
   - C
     - Function, pointer, storage class
@@ -157,6 +164,9 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
     - Derived type
     - Callback
     - Interfacing to other language e.g. Python or C++
+  - GNU library
+    - GSL
+    - Many more libraries [here](https://en.wikipedia.org/wiki/List_of_GNU_packages)
 - Memory allocation
   - Stack, heap, global memory
 - Math libraries
