@@ -20,8 +20,12 @@
 
 ## General skills
 
-- For Windows: Installing programs
-- For Linux: and 
+- For Windows: 
+  - Install programs and modify system variables such as `PATH`
+  - Install Nvidia CUDA toolkit and driver
+  - Setup VPN and local network
+  - Setup dual boost for Linux, or install WSL for Ubuntu
+- For Linux and macOS:
   - Basic/intermediate commands: `ls`, `cd`, `cp`, `rm`, `ssh`, `scp`, and many more
   - Know some important files/folders: `.bashrc`, `.ssh`
   - Understand some env var: `$PATH`, `$LD_LIBRARY_PATH`
