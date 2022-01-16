@@ -1,17 +1,36 @@
 # Guide for Theoretical/Computational Chemists <!-- omit in toc -->
 
-## tl;dr <!-- omit in toc -->
->  Computational chemistry describes the use of computer modelling and simulation - 
+## What is computational chemistry? <!-- omit in toc -->
+tl;dr 
+> Computational chemistry describes the use of computer modelling and simulation - 
 > including ab initio approaches based on quantum chemistry, and empirical approaches - 
 > to study the structures and properties of molecules and materials. 
 > Computational chemistry is also used to describe the computational techniques 
 > aimed at understanding the structure and properties of molecules and materials. 
 
+## Research topics <!-- omit in toc -->
+
+- Chemical reactions
+- Photochemistry
+- Catalyst design
+- Potential energy surface
+- Vibrational and electronic spectroscopy
+- Solid-state chemistry
+- Drug discovery, biomolecular docking
+- Cheminformatics
+- Machine learning
+
+## Community <!-- omit in toc -->
+
+- Conference: [WATOC](https://www.watoc.net/), [ICQC](https://en.wikipedia.org/wiki/International_Congress_of_Quantum_Chemistry), [APATCC](https://www.apatcc.org/)
+- Journals: [A list of well-known journals that regularly publish computational chemistry articles](https://www.chemtheorist.com/comp-chem-journals.html)
+- Forum: [StackExchange](https://chemistry.stackexchange.com/questions/tagged/computational-chemistry), [Matter Modeling](https://mattermodeling.stackexchange.com/)
+- Mailing list: [CCL](http://www.ccl.net/)
+
 ## Skills needed to be a theoretical/computational chemist <!-- omit in toc -->
 
-- [General skills](#general-skills)
-- [Research topics](#research-topics)
-- [A list of well-known journals that regularly publish computational chemistry articles](#a-list-of-well-known-journals-that-regularly-publish-computational-chemistry-articles)
+- [Core skills](#core-skills)
+- [General technical skills](#general-technical-skills)
 - [Essential skills for method development](#essential-skills-for-method-development)
 - [Essential skills for software development](#essential-skills-for-software-development)
 - [Essential skills for HPC](#essential-skills-for-hpc)
@@ -19,9 +38,18 @@
 - [Essential skills for machine learning (bonus)](#essential-skills-for-machine-learning-bonus)
 - [Essential skills for machine learning chemistry (bonus)](#essential-skills-for-machine-learning-chemistry-bonus)
 
-## General skills
+## Core skills
 
-- For Windows: 
+- Understanding of theoretical principles, including kinetics, thermodynamics, and quantum chemistry
+- Various levels of programming, code development, and software architecture skills
+- Problem-solving skills and an interest in solving basic and applied research problems
+- Skills in adapting and integrating computer software to solve new categories of problems
+- Critical thinking for analyzing and interpreting computational results and statistical data
+- Googling and stackoverflowing :upside_down_face:
+
+## General technical skills
+
+- For Windows:
   - Install programs and modify system variables such as `PATH`
   - Install Nvidia CUDA toolkit and driver
   - Setup VPN and local network
@@ -30,12 +58,12 @@
   - Basic/intermediate commands: `ls`, `cd`, `cp`, `rm`, `ssh`, `scp`, and many more
   - Know some important files/folders: `.bashrc`, `.ssh`
   - Understand some environmen variables: `$PATH`, `$LD_LIBRARY_PATH`
-- Coding
-  - Bash
-  - Python, Jupyter notebook
+- Scripting programming language
+  - Bash, awk, perl, Python + Jupyter notebook
 - Cluster / HPC
-  - Terminology: master and compute nodes, CPU cores, memory
-  - SLURM, PBS, SGE, module
+  - Understand terminology: master node, compute node, scheduler, CPU cores, processes, memory
+  - Scheduler: Slurm, PBS, SGE
+  - Software manager: module (`avail`, `load`, `unload`, `switch`)
 - Software
   - Commercial: Gaussian, Q-Chem, ADF, MOLPRO, MOLCAS, TURBOMOLE and many more
   - Non-commercial: PySCF, Psi4, OpenMOLCAS, GAMESS, ORCA, NWChem, DIRAC, DALTON, CP2K, LAMMPS, VASP, QE and many more
@@ -48,27 +76,12 @@
 - Writing
   - Microsoft Word
   - LaTeX
-    - pdflatex, xelatex, lualatex
-    - TeX Live, Studio
-    - Online platform: OverLeaf
+    - Compiler: pdflatex, xelatex, lualatex
+    - Distribution: TeX Live, MikTeX
+    - Editor: OverLeaf, TeXstudio, Texmaker
 - Presentation
   - Powerpoint
   - LaTeX Beamer
-
-## Research topics
-
-- Chemical reactions
-- Photochemistry
-- Catalyst design
-- Potential energy surface
-- Vibrational and electronic spectroscopy
-- Drug discovery, biomolecular docking
-- Cheminformatics
-- Machine learning
-
-## A list of well-known journals that regularly publish computational chemistry articles
-
-Ref: https://www.chemtheorist.com/comp-chem-journals.html
 
 ## Essential skills for method development
 
@@ -77,6 +90,7 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
     - Geenral properties: Complex conjugate, transpose and conjugate transpose
     - Diagonalization
     - Matrix multiplication (Dense and sparse)
+  - Operators & commutators
   - Eigen-problem
     - Jacobi iteration
     - Eigenvalue & eigenvector
@@ -94,8 +108,9 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
   - Newton-Raphson method
   - PDE
 - Quantum chemistry
-  - Electronic structure, excited state, transition state, atomic/molecular bond
-  - Bra-ket notation (quantum state)
+  - Understand electronic structures
+    - Wavefunction and its properties, Hilbert space, linearity, Bra-Ket notation, Basis sets
+  - Excited state, transition state, atomic/molecular bond
   - *Ab initio* (wavefunction-based) method
     - HF, MPn, CI, CC, MRCI, MSSCF, CASSCF, CASPT2
     - DMRG (matrix product states), FCIQMC
@@ -106,7 +121,7 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
     - Gaussian and plane wave method
   - Semi-empirical
   - Dynamic
-    - Adiabatic and non-adiabatic
+    - Adiabatic and non-adiabatic methods
   - Other methods
     - QM/MM
 - Molecular dynamics
@@ -213,10 +228,7 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
   - GitHub & GitLab
 - Documentation
   - Sphinx (for markdown and reStructuredText)
-  - Doxygen (for C++ or Fortran)
-- Soft skills
-  - Problem solving, critical thinking
-  - Googling and stackoverflowing :upside_down_face:
+  - Doxygen
 
 ## Essential skills for HPC
 
@@ -285,7 +297,7 @@ Ref: https://www.chemtheorist.com/comp-chem-journals.html
 ## Essential skills for machine learning chemistry (bonus)
 
 - Atomic and molecular representation
-  - Structral-based: one-hot, fingerprint
+  - Structural-based: one-hot, fingerprint
   - Electronic-based: Coulomb matrix, BoB, Symmetry and Gaussian functions, Gaussian function and many more
 - Configurational and chemical space
 - Target prediction
