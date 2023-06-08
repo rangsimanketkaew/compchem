@@ -10,7 +10,7 @@ tl;dr
 
 ## Research topics <!-- omit in toc -->
 
-- Chemical reactions
+- Chemical reactions, kinetics
 - Photochemistry
 - Catalyst design
 - Potential energy surface
@@ -19,6 +19,7 @@ tl;dr
 - Drug discovery, biomolecular docking
 - Cheminformatics
 - Machine learning
+- Quantum computing
 
 ## Community <!-- omit in toc -->
 
@@ -40,7 +41,7 @@ tl;dr
 
 ## Core skills
 
-- Understanding of theoretical principles, including kinetics, thermodynamics, and quantum chemistry
+- Understanding of theoretical principles including kinetics, thermodynamics, and electronic structure
 - Various levels of programming, code development, and software architecture skills
 - Problem-solving skills and an interest in solving basic and applied research problems
 - Skills in adapting and integrating computer software to solve new categories of problems
@@ -61,12 +62,12 @@ tl;dr
 - Scripting programming language
   - Bash, awk, perl, Python + Jupyter notebook
 - Cluster / HPC
-  - Understand terminology: master node, compute node, scheduler, CPU cores, processes, memory
+  - Understand terminology: master node, compute node, scheduler, CPU cores, processes, memory management
   - Scheduler: Slurm, PBS, SGE
   - Software manager: module (`avail`, `load`, `unload`, `switch`)
-- Software
+- Quantum chemistry software
   - Commercial: Gaussian, Q-Chem, ADF, MOLPRO, MOLCAS, TURBOMOLE and many more
-  - Non-commercial: PySCF, Psi4, OpenMOLCAS, GAMESS, ORCA, NWChem, DIRAC, DALTON, CP2K, LAMMPS, VASP, QE and many more
+  - Non-commercial: PySCF, Psi4, OpenMOLCAS, GAMESS, ORCA, NWChem, DIRAC, DALTON, CP2K, LAMMPS, VASP, Quantum Espresso and many more
   - Full list is [here](https://en.wikipedia.org/wiki/List_of_quantum_chemistry_and_solid-state_physics_software)
 - Graphic visualization
   - JMol, Molden, Gaussview, Avogadro, UCSF Chimera, VMD, Ovito, PyMol
@@ -81,7 +82,7 @@ tl;dr
     - Editor: OverLeaf, TeXstudio, Texmaker
 - Presentation
   - Powerpoint
-  - LaTeX Beamer
+  - LaTeX (LuaLaTeX) Beamer
 
 ## Essential skills for method development
 
@@ -95,8 +96,10 @@ tl;dr
     - Jacobi iteration
     - Eigenvalue & eigenvector
     - Singular value decomposition
+  - Optimization algorithms
+  - Numerical analysis
 - Calculus
-  - Numerical method
+  - Numerical methods
   - Differential equation & ODE
   - Vector calculus
 - Data fitting
@@ -108,22 +111,35 @@ tl;dr
   - Newton-Raphson method
   - PDE
 - Quantum chemistry
-  - Understand electronic structures
-    - Wavefunction and its properties, Hilbert space, linearity, Bra-Ket notation, Basis sets
-  - Excited state, transition state, atomic/molecular bond
+  - Wavefunctions and molecular orbitals
+    - Wavefunction and its properties, Hilbert space, linearity, Bra-Ket notation
+    - Born-Oppenheimer approximation, Slater determinant, linear combination of atomic orbtials (LCAO)
+    - Basis functions, basis sets (Gaussian-type orbitals, GTOs)
   - *Ab initio* (wavefunction-based) method
     - HF, MPn, CI, CC, MRCI, MSSCF, CASSCF, CASPT2
     - DMRG (matrix product states), FCIQMC
   - Density functional theory method
     - KS equation, exchange and correlation functionals
     - (Real-time) TDDFT
-    - Tight-binding (DFTB)
-    - Gaussian and plane wave method
+    - Gaussian and plane wave method (GPW, GAPW)
+    - Pseudopotential
+      - Effective core potential (ECP)
   - Semi-empirical
-  - Dynamic
-    - Adiabatic and non-adiabatic methods
+    - AM1, PM3, PM6
+    - Tight-binding methods (e.g. DFTB, xTB)
+  - Excited state, transition state, atomic/molecular bond
+    - Adiabatic state, non-adiabatic state, Delta-SCF, constrained DFT
+    - Surface hopping, quantum dynamics
+  - Vibrational spectroscopy
+    - IR, Raman
+    - Linear response (first, second response)
+    - Perturbation theory
+  - *Ab initio* molecular dynamic (AIMD)
+    - Car-Parrinello MD (CPMD)
+    - Born-Oppenheimer MD (BOMD)
   - Other methods
     - QM/MM
+    - Energy decomposition analysis
 - Molecular dynamics
   - Classical mechanics
   - Force field
@@ -141,9 +157,9 @@ tl;dr
 
 ## Essential skills for software development
 
-- Tex editor
+- Code editors
   - Vi/Vim, Nano
-  - VS Code, Atom, Eclipse, Sublime
+  - VS Code, Atom, Eclipse, Sublime, Notepad++
 - File format
   - XML, JSON
 - General programming skills
@@ -297,12 +313,19 @@ tl;dr
 ## Essential skills for machine learning chemistry (bonus)
 
 - Atomic and molecular representation
-  - Structural-based: one-hot, fingerprint
-  - Electronic-based: Coulomb matrix, BoB, Symmetry and Gaussian functions, Gaussian function and many more
-- Configurational and chemical space
+  - Structural-based: SMILES, one-hot encoding, 1D/2D fingerprint
+  - Electronic-based: 
+    - Coulomb matrix, BoB
+    - Sine matrix, Ewald sum matrix
+    - Smooth Overlap of Atomic Positions (SOAP)
+    - Symmetry and Gaussian functions, and many more
+    - Many-body tensor representation
+- Configurational space, chemical space
 - Target prediction
   - Energy and force
-  - Molecular properties: dipole moment, polarizability
+  - Molecular properties: 
+    - (transition) dipole moment, polarizability
+    - Electron transfer matrix element
 - Database
   - PubChem
   - GDB
