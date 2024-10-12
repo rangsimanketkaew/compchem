@@ -1,19 +1,21 @@
 # Guide for Theoretical/Computational Chemists <!-- omit in toc -->
 
-## What is computational chemistry? <!-- omit in toc -->
+## What is it? <!-- omit in toc -->
 tl;dr 
-> Computational chemistry describes the use of computer modelling and simulation - 
-> including ab initio approaches based on quantum chemistry, and empirical approaches - 
+> Computational chemistry describes the use of computer modeling and simulation, such as  
+> ab initio approaches based on quantum chemistry, and empirical approaches, 
 > to study the structures and properties of molecules and materials. 
 > Computational chemistry is also used to describe the computational techniques 
 > aimed at understanding the structure and properties of molecules and materials. 
 
 ## Research topics <!-- omit in toc -->
 
-- Chemical reactions, kinetics
-- Photochemistry
+- Chemical reactions (thermodynamics and kinetics)
 - Catalyst design
+- Photochemistry and electrochemistry
 - Potential energy surface
+- Excited states
+- Relativistic quantum chemistry
 - Vibrational and electronic spectroscopy
 - Solid-state chemistry
 - Drug discovery, biomolecular docking
@@ -28,7 +30,7 @@ tl;dr
 - Forum: [StackExchange](https://chemistry.stackexchange.com/questions/tagged/computational-chemistry), [Matter Modeling](https://mattermodeling.stackexchange.com/)
 - Mailing list: [CCL](http://www.ccl.net/)
 
-## Skills needed to be a theoretical/computational chemist <!-- omit in toc -->
+## Skills that every theoretical/computational chemist should have<!-- omit in toc -->
 
 - [Core skills](#core-skills)
 - [General technical skills](#general-technical-skills)
@@ -46,7 +48,7 @@ tl;dr
 - Problem-solving skills and an interest in solving basic and applied research problems
 - Skills in adapting and integrating computer software to solve new categories of problems
 - Critical thinking for analyzing and interpreting computational results and statistical data
-- Googling and stackoverflowing :upside_down_face:
+- Googling and stackoverflowing (and ChatGPTing?) :upside_down_face:
 
 ## General technical skills
 
@@ -60,15 +62,15 @@ tl;dr
   - Know some important files/folders: `.bashrc`, `.ssh`
   - Understand some environmen variables: `$PATH`, `$LD_LIBRARY_PATH`
 - Scripting programming language
-  - Bash, awk, perl, Python + Jupyter notebook
+  - Bash, awk, Perl, Python
 - Cluster / HPC
   - Understand terminology: master node, compute node, scheduler, CPU cores, processes, memory management
   - Scheduler: Slurm, PBS, SGE
   - Software manager: module (`avail`, `load`, `unload`, `switch`)
 - Quantum chemistry software
-  - Commercial: Gaussian, Q-Chem, ADF, MOLPRO, MOLCAS, TURBOMOLE and many more
+  - Commercial: Gaussian, Q-Chem, ADF, MOLPRO, MOLCAS, TURBOMOLE, and many more
   - Non-commercial: PySCF, Psi4, OpenMOLCAS, GAMESS, ORCA, NWChem, DIRAC, DALTON, CP2K, LAMMPS, VASP, Quantum Espresso and many more
-  - Full list is [here](https://en.wikipedia.org/wiki/List_of_quantum_chemistry_and_solid-state_physics_software)
+  - A complete list is [here](https://en.wikipedia.org/wiki/List_of_quantum_chemistry_and_solid-state_physics_software)
 - Graphic visualization
   - JMol, Molden, Gaussview, Avogadro, UCSF Chimera, VMD, Ovito, PyMol
   - 2D and 3D plots
@@ -77,7 +79,7 @@ tl;dr
 - Writing
   - Microsoft Word
   - LaTeX
-    - Compiler: pdflatex, xelatex, lualatex
+    - Compiler: `pdflatex`, `xelatex`, `lualatex`
     - Distribution: TeX Live, MikTeX
     - Editor: OverLeaf, TeXstudio, Texmaker
 - Presentation
@@ -88,7 +90,7 @@ tl;dr
 
 - Linear algebra
   - Vectors and matrices
-    - Geenral properties: Complex conjugate, transpose and conjugate transpose
+    - General properties: Complex conjugate, transpose and conjugate transpose
     - Diagonalization
     - Matrix multiplication (Dense and sparse)
   - Operators & commutators
@@ -105,7 +107,7 @@ tl;dr
 - Data fitting
   - Taylor expansion
   - Polynomial interpolation
-  - Least squeare approximation
+  - Least square approximation
 - Finding roots
   - Bilinear interpolation
   - Newton-Raphson method
@@ -113,28 +115,28 @@ tl;dr
 - Quantum chemistry
   - Wavefunctions and molecular orbitals
     - Wavefunction and its properties, Hilbert space, linearity, Bra-Ket notation
-    - Born-Oppenheimer approximation, Slater determinant, linear combination of atomic orbtials (LCAO)
+    - Born-Oppenheimer approximation, Slater determinant, linear combination of atomic orbitals (LCAO)
     - Basis functions, basis sets (Gaussian-type orbitals, GTOs)
   - *Ab initio* (wavefunction-based) method
     - HF, MPn, CI, CC, MRCI, MSSCF, CASSCF, CASPT2
     - DMRG (matrix product states), FCIQMC
   - Density functional theory method
-    - KS equation, exchange and correlation functionals
+    - KS equation, exchange, and correlation functionals
     - (Real-time) TDDFT
     - Gaussian and plane wave method (GPW, GAPW)
     - Pseudopotential
       - Effective core potential (ECP)
   - Semi-empirical
     - AM1, PM3, PM6
-    - Tight-binding methods (e.g. DFTB, xTB)
+    - Tight-binding methods (e.g. DFTB, GFNx-xTB)
   - Excited state, transition state, atomic/molecular bond
     - Adiabatic state, non-adiabatic state, Delta-SCF, constrained DFT
     - Surface hopping, quantum dynamics
   - Vibrational spectroscopy
-    - IR, Raman
+    - IR, Raman, Raman Optical Activity
     - Linear response (first, second response)
     - Perturbation theory
-  - *Ab initio* molecular dynamic (AIMD)
+  - *ab initio* molecular dynamic (AIMD)
     - Car-Parrinello MD (CPMD)
     - Born-Oppenheimer MD (BOMD)
   - Other methods
@@ -144,11 +146,14 @@ tl;dr
   - Classical mechanics
   - Force field
   - Statistical mechanics
-  - Enhanced sampling: Free energy, unbrella sampling, etc.
+  - Enhanced sampling:
+    - Free energy
+    - Metadynamics
+    - Umbrella sampling
   - Monte Carlo method
 - Material simulation
   - Multiscale modeling
-  - Coarse grained
+  - Coarse-grained simulation
   - Condense matter simulation
 - Programming (for mathematical proof)
   - Scripting language: Bash, Python
@@ -188,25 +193,25 @@ tl;dr
     - File handling
   - C++
     - C++ 11 or newer
-    - Type of variable: signed, unsigned, long, double, etc.
+    - Type of variable: `signed`, `unsigned`, `long`, `double`, etc.
     - Loops, conditional statement
-    - Standard libraries: vector, rand
+    - Standard libraries: `vector`, `rand`
     - Understanding header (`.hpp`) and source file (`.cpp` or `.cc`)
     - Preprocessor (`#if`, `#ifdef`, `#ifndef`, `#define`, etc.)
     - Function, class, struct, template
     - Declaration
-      - namespace, const, attribute, pointer, pass by reference, static_assert
+      - `namespace`, `const`, `attribute`, `pointer`, pass by reference, `static_assert`
     - Initialization
     - Misc: casting, lambda expression, encapsulation, file handling, exception handling
   - Fortran
-    - Learn either F77 or F90 or modern fortran (2003, 2008, 2018)
+    - Learn either F77 or F90 or modern Fortran (2003, 2008, 2018)
     - Module, subroutine, function
-    - Array (allocatable and multidimentional) and string
+    - Array (allocatable and multidimensional) and string
     - Operator overloading
     - Flow control
     - Derived type
     - Callback
-    - Interfacing to other language e.g. Python or C++
+    - Interfacing with other languages e.g. Python or C++
   - GNU library
     - GSL
     - Many more libraries [here](https://en.wikipedia.org/wiki/List_of_GNU_packages)
@@ -225,14 +230,14 @@ tl;dr
   - libint: For computing Gaussian integral
   - libcint: general GTO integrals
 - Code optimization
-  - Benchaming/scaling
+  - Benchmarking/scaling
   - Complexity (Big O)
 - GNU
   - Static and dynamic libraries
   - Archive
   - Compiling (g++, gcc) and linking (ld)
   - Useful flags for compiler and linker e.g. `-O2`, `-O3`, `-fPIC`
-- Compilng tools
+- Compiling tools
   - autoconf
   - configure
   - Make, cmake, automake
@@ -257,8 +262,8 @@ tl;dr
   - Distributed memory: MPI
     - Implementations: OpenMPI, Intel MPI, MVAPICH
 - Intel ecosystem
-  - OpenMP compiler: icc, ifort
-  - MPI compiler: mpicc, mpiicc (for Intel C compiler), mpicxx (for C++), mpiifort (for Fortran)
+  - OpenMP compiler: `icc`, `ifort`
+  - MPI compiler: `mpicc`, `mpiicc` (for Intel C compiler), `mpicxx` (for C++), `mpiifort` (for Fortran)
 - Cloud computing (bonus)
 - Server and database
 - Networking
@@ -300,10 +305,12 @@ tl;dr
     - Feedforward NN
       - Autoencoder
     - CNN
-    - RNN (LSTM)
+    - RNN
+      - LSTM
     - GNN
     - Adversarial NN
       - GAN
+    - Graph-based Neural Network (GNN)
 - Model training and optimization
   - Hyperparameter optimization
 - Techniques to prevent overfittingTechniques
@@ -313,14 +320,25 @@ tl;dr
 ## Essential skills for machine learning chemistry (bonus)
 
 - Atomic and molecular representation
-  - Structural-based: SMILES, one-hot encoding, 1D/2D fingerprint
+  - Structural-based:
+    - SMILES
+    - One-hot encoding
+    - 1D/2D fingerprint
   - Electronic-based: 
     - Coulomb matrix, BoB
     - Sine matrix, Ewald sum matrix
     - Smooth Overlap of Atomic Positions (SOAP)
     - Symmetry and Gaussian functions, and many more
     - Many-body tensor representation
-- Configurational space, chemical space
+- Models
+  - sGDML
+  - SchNet
+  - MACE
+  - MPNN
+  - BPNN
+- Molecular configuration
+  - Configurational space
+  - Chemical space
 - Target prediction
   - Energy and force
   - Molecular properties: 
